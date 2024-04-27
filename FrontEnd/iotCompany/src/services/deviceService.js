@@ -5,21 +5,22 @@ const apiClient = axios.create({
     withCredentials: false,
     headers: {
         Accept: 'application/json',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
     }
 });
 
 export const deviceService = {
 
-    // async getAllPersons() {
-    //     try {
-    //         let response = await apiClient.get("/persons");
-    //         return response.data;
-    //     } catch (error) {
-    //         console.error("Error al obtener personas:", error);
-    //         throw error;
-    //     }
-    // },
+    async getAllDevice() {
+        try {
+            let response = await apiClient.get("/device");
+            return response.data;
+        } catch (error) {
+            console.error("Error al obtener dispositivos:", error);
+            throw error;
+        }
+    },
 
     // async postUser(userPerson) {
     //     try {

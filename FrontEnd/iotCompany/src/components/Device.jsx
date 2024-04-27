@@ -1,70 +1,55 @@
 import React, { useEffect, useState } from "react";
-import { deviceService } from "../../services/deviceService";
+import { deviceService } from "../services/deviceService";
 import "./device.css";
 
 
 function Device() {
 
-//   const [componenteSeleccionado, setComponenteSeleccionado] = useState(null);
-//   const [artists, setArtists] = useState([]);
-//   const [customers, setCustomers] = useState([]);
+    const [listDevice, setListDevice] = useState([]);
 
-//   const handleBotonClick = (componente) => {
-//     setComponenteSeleccionado(componente);
-//     return componenteSeleccionado;
-//   };
 
-//   useEffect(() => {
-//     async function fetchUsers() {
-//       try {
-//         const allPersons = await adminServiceF.getAllPersons();
-//         const artistas = allPersons.filter(
-//           (persona) => persona.user_type === "Artist"
-//         );
-//         const clientes = allPersons.filter(
-//           (persona) => persona.user_type === "Client"
-//         );
+    useEffect(() => {
+        async function fetchDevices() {
+            try {
+                const allDevice = await deviceService.getAllDevice();
+                setListDevice(allDevice);
+            } catch (error) {
+                console.error("Error al obtener datos:", error);
+            }
+        }
 
-//         setArtists(artistas);
-//         setCustomers(clientes);
-//       } catch (error) {
-//         console.error("Error al obtener datos:", error);
-//       }
-//     }
+        fetchDevices();
+    }, []);
 
-//     fetchUsers();
-//   }, []);
+    return (
+        <>
+            <div>
+                <h1>Lista de Dispositivos</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre del Dispositivo</th>
+                            <th>Fecha de Adición</th>
+                            <th>Tarifa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {listDevice.map(device => (
+                            <tr key={device.id_device}>
+                                <td>{device.id_device}</td>
+                                <td>{device.device_name}</td>
+                                <td>{device.addition_time}</td>
+                                <td>{device.fee}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
 
-  return (
-    <>
-      {/* <div className="container">
-        <div className="columna1">
-          <button
-            className="buttonA"
-            onClick={() => handleBotonClick("ArtistasComponent")}
-          >
-            Artistas
-          </button>
-          <button
-            className="buttonA"
-            onClick={() => handleBotonClick("ClienteComponent")}
-          >
-            Clientes
-          </button>
-        </div>
-        <div className="columna2">
-          {componenteSeleccionado === "ArtistasComponent" && (
-            <AdminArtists artists={artists} />
-          )}
-          {componenteSeleccionado === "ClienteComponent" && (
-            <AdminCustomers customers={customers} />
-          )}
-        </div>
-      </div> */}
 
-      <p>device componente</p>
-    </>
-  );
+        </>
+    );
 }
 
 export default Device;
