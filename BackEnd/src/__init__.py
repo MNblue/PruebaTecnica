@@ -9,8 +9,11 @@ app= Flask(__name__)
 def init_app(config):
     app.config.from_object(config)
 
-    app.register_blueprint(DeviceRoutes.getDevice, url_prefix='/device')
-    app.register_blueprint(IndustryRoutes.getIndustry, url_prefix='/industry')
-    app.register_blueprint(WharehouseRoutes.getWharehouse, url_prefix='/wharehouse')
+    app.register_blueprint(DeviceRoutes.routeDevice, url_prefix='/device')
+    app.register_blueprint(IndustryRoutes.routeIndustry, url_prefix='/industry')
+    app.register_blueprint(WharehouseRoutes.routeWharehouse, url_prefix='/wharehouse')
+
+    app.register_blueprint(IndustryRoutes.searchIndustry, url_prefix='/industrySearch')
+    app.register_blueprint(DeviceRoutes.searchDevice, url_prefix='/deviceSearch')
 
     return app
