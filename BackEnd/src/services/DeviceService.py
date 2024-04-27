@@ -7,6 +7,7 @@ class DeviceService():
 
     @classmethod
     def get_device(cls):
+        print("estamos en services de backend para un get de device")
         try:
             connection = get_connection()
            

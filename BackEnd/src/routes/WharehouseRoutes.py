@@ -7,7 +7,7 @@ routeWharehouse= Blueprint('wharehouse_blueprint_get', __name__)
 
 @routeWharehouse.route('/',methods=['GET'])
 def get_wharehouse():
-    list_wharehouse = WharehouseService.get_wharehouse();
+    list_wharehouse = WharehouseService.get_wharehouse()
    
     print("Consola: Almacen obtenido.")
 

@@ -2,9 +2,11 @@ from flask import Flask
 from src.routes import DeviceRoutes
 from src.routes import IndustryRoutes
 from src.routes import WharehouseRoutes
+from flask_cors import CORS
 
 app= Flask(__name__)
-
+CORS(app,resources={"*":{"origins": "http://localhost:5173"}})
+# CORS(app)
 
 def init_app(config):
     app.config.from_object(config)
