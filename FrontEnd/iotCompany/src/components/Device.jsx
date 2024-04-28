@@ -35,14 +35,22 @@ function Device() {
                         </tr>
                     </thead>
                     <tbody>
-                        {listDevice.map(device => (
+                        {/* {listDevice.map(device => (
                             <tr key={device.id_device}>
                                 <td>{device.id_device}</td>
                                 <td>{device.device_name}</td>
                                 <td>{device.addition_time}</td>
                                 <td>{device.fee}</td>
                             </tr>
+                        ))} */}
+                        {listDevice.map((innerArray, index) => (
+                            <tr key={index}>
+                                {innerArray.map((device, deviceIndex) => (
+                                    <td key={deviceIndex}>{device}</td>
+                                ))}
+                            </tr>
                         ))}
+
                     </tbody>
                 </table>
             </div>
