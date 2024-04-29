@@ -7,7 +7,7 @@ import DeviceView from './views/DeviceView'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <App /> */}
+    
     <DeviceView/>
   </React.StrictMode>,
 )

@@ -6,9 +6,9 @@ from flask_cors import cross_origin
 routeDevice = Blueprint('device_blueprint_get', __name__)
 # searchDevice = Blueprint('search_blueprint_device', __name__)
 
-@routeDevice.route('/')
-@cross_origin(origins='*', methods=['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'])
-# @routeDevice.route('/', methods=['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'], strict_slashes=False)
+# @routeDevice.route('/')
+# @cross_origin(origins='*', methods=['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'])
+@routeDevice.route('/', methods=['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'], strict_slashes=False)
 def get_Device():
 
     if request.method == "GET":

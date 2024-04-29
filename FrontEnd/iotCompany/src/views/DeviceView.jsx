@@ -1,4 +1,4 @@
-import Device from "../components/Device";
+import Device from "../components/device/Device";
 
 function DeviceView() {
   return (

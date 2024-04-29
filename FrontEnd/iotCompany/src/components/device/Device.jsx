@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { deviceService } from "../services/deviceService";
+import { deviceService } from "../../services/deviceService";
 import "./device.css";
 
 
@@ -35,14 +35,6 @@ function Device() {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* {listDevice.map(device => (
-                            <tr key={device.id_device}>
-                                <td>{device.id_device}</td>
-                                <td>{device.device_name}</td>
-                                <td>{device.addition_time}</td>
-                                <td>{device.fee}</td>
-                            </tr>
-                        ))} */}
                         {listDevice.map((innerArray, index) => (
                             <tr key={index}>
                                 {innerArray.map((device, deviceIndex) => (
@@ -50,7 +42,6 @@ function Device() {
                                 ))}
                             </tr>
                         ))}
-
                     </tbody>
                 </table>
             </div>
