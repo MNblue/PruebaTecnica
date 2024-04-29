@@ -1,0 +1,29 @@
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    background-color: white; /* Fondo blanco */
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra gris */
+    table-layout: auto; /* Ajuste automático de las columnas al contenido */
+  }
+  
+  /* Estilos para la cabecera de la tabla */
+  thead {
+    background-color: #6c7a89; /* Gris azulado */
+    color: white; /* Letras en blanco */
+  }
+  
+  /* Estilos para las celdas de la tabla */
+  td, th {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    /* max-width: 0; Limita el ancho máximo de las celdas */
+    overflow: hidden; /* Oculta el contenido que desborda */
+    /* white-space: nowrap; Evita el ajuste de línea del texto */
+    /* text-overflow: ellipsis; Agrega puntos suspensivos para indicar texto cortado */
+  }
+
+  div{
+    width: max-content;
+  }

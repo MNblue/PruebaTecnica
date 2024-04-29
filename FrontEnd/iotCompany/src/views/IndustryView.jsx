@@ -1,11 +1,9 @@
-// import Product from "../components/gallery/Product";
-// import Footer from "../components/footer/Footer";
+import Industry from "../components/industry/Industry";
 
 function IndustryView() {
     return (
       <>
-        {/* <Product />
-        <Footer /> */}
+        <Industry/>
       </>
     );
   }
